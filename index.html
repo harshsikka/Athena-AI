@@ -115,9 +115,9 @@ function send() {
       }
       if (val !== messageRecording) {
         var msg = new SpeechSynthesisUtterance();
-        msg.voiceURI = "native";
+        msg.voiceURI = "Google UK English Female";
         msg.text = val;
-        msg.lang = "en-US";
+        msg.lang = "en-GB";
         window.speechSynthesis.speak(msg);
       }
       $("#spokenResponse").addClass("is-active").find(".spoken-response__text").html(val);
