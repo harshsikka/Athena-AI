@@ -12,8 +12,8 @@
       recognition,
       messageRecording = "Recording...",
       messageCouldntHear = "I couldn't hear you, could you say that again?",
-      messageInternalError = "Oh no, there has been an internal server error",
-      messageSorry = "I'm sorry, I don't have the answer to that yet.";
+      messageInternalError = "Oh no, there seems to be an error in my system.",
+      messageSorry = "I'm sorry, I'm still learning, but I will have an answer for that soon!'";
     $(document).ready(function() {
       $speechInput = $("#speech");
       $recBtn = $("#rec");
@@ -114,7 +114,7 @@ function send() {
       }
       if (val !== messageRecording) {
         var msg = new SpeechSynthesisUtterance();
-        msg.voiceURI = "female";
+        msg.voiceURI = "native";
         msg.text = val;
         msg.lang = "en-GB";
         window.speechSynthesis.speak(msg);
@@ -144,7 +144,7 @@ function send() {
     }
     input {
       background-color: #ffffff;
-      border: 1px solid #3F7F93;
+      border: 1px solid #3399ff;
       color: #3399ff;
       font-family: 'Product Sans', Arial, sans-serif;
       font-size: 20px;
@@ -153,10 +153,19 @@ function send() {
       width: 400px;
       -webkit-transition: all 0.35s ease-in;
     }
+    
+     h1 {
+            line-height: 1.25em;
+            color: #3399ff;
+            font-size: 3.157em;
+            font-weight: 700;
+            font-family: 'Product Sans', Arial, sans-serif;
+        }
+        
     textarea {
-      background-color: #070F24;
+      background-color: #ffffff;
       border: 1px solid #122435;
-      color: #606B88;
+      color: #3399ff;
       padding: 0.5em;
       width: 100%;
       -webkit-transition: all 0.35s ease-in;
@@ -216,6 +225,7 @@ function send() {
   </style>
 </head>
 <body>
+  <h1>Hi, I'm Athena the AI!</h1>
   <div class="container">
     <input id="speech" type="text">
     <button id="rec" class="btn">Speak</button>
