@@ -79,7 +79,6 @@
     function updateRec() {
       $recBtn.text(recognition ? "Stop" : "Speak");
     }
-
 function send() {
       var text = $speechInput.val();
       $.ajax({
@@ -115,9 +114,9 @@ function send() {
       }
       if (val !== messageRecording) {
         var msg = new SpeechSynthesisUtterance();
-        msg.voiceURI = "Google UK English Female";
+        msg.voiceURI = "native";
         msg.text = val;
-        msg.lang = "en-GB";
+        msg.lang = "en-US";
         window.speechSynthesis.speak(msg);
       }
       $("#spokenResponse").addClass("is-active").find(".spoken-response__text").html(val);
@@ -131,14 +130,6 @@ function send() {
       *, *:before, *:after {
       box-sizing: inherit;
     }
-    h1 {
-    font-family: 'Product Sans', Arial, sans-serif;
-    font-size: 100px;
-    color: #3399ff;
-      
-    }
-    }
-    
     body {
       background-color: #ffffff;
       font-family: 'Product Sans', Arial, sans-serif;
@@ -163,7 +154,7 @@ function send() {
       -webkit-transition: all 0.35s ease-in;
     }
     textarea {
-      background-color: #ffffff;
+      background-color: #070F24;
       border: 1px solid #122435;
       color: #606B88;
       padding: 0.5em;
